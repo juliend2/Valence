@@ -7,10 +7,9 @@ Installation
 ------------
 
 1. Install the SSH2 php library
+  (you might need sudo)
   
-(you might need sudo)
-  
-    $ pecl install ssh2 channel://pecl.php.net/ssh2-0.11.3
+        $ pecl install ssh2 channel://pecl.php.net/ssh2-0.11.3
 
 2. add <path-to-valence>/bin to your shell $PATH
 
