@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+include realpath(dirname(__FILE__)).'/../valence.php';
+
+$connection = null;
+
+include 'valencefile.php';
+
+// call the task (function) that is requested in the $argv[1]
+
+if (empty($argv[1])) {
+  echo "You need to call a task to execute. Example:\n";
+  echo "    $ va deployer\n";
+  die;
+}
+
+$argv[1](); // call it
+
+# vim: set filetype=php
