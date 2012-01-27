@@ -11,12 +11,12 @@ Installation
   
         $ pecl install ssh2 channel://pecl.php.net/ssh2-0.11.3
 
-2. add <path-to-valence>/bin to your shell $PATH
+2. add `/path/to/valence/bin` to your shell `$PATH`
 
 Usage
 -----
 
-1. create a valencefile.php file in your project root.
+1. create a `valencefile.php` file in your project root.
 
 2. in this file, set up the connection like this:
 
