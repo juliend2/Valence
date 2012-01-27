@@ -4,9 +4,12 @@ include realpath(dirname(__FILE__)).'/../valence.php';
 
 $connection = null;
 
-include 'valencefile.php';
+if (!file_exists('valencefile.php')) {
+  echo "Couldn't find your valencefile.php. Make sure it resides in the directory in which you call `va`.\n";
+  die();
+}
 
-// call the task (function) that is requested in the $argv[1]
+include 'valencefile.php';
 
 if (empty($argv[1])) {
   echo "You need to call a task to execute. Example:\n";
@@ -14,6 +17,7 @@ if (empty($argv[1])) {
   die;
 }
 
-$argv[1](); // call it
+// call the task (function) that is requested in the $argv[1]
+$argv[1]();
 
 # vim: set filetype=php
