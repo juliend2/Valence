@@ -20,22 +20,22 @@ Usage
 
 2. in this file, set up the connection like this:
 ```php
-    $current_directory = '/home/remoteuser'; // this is your starting path. must be set before the connect() call
-    connect(array(
-      'host'=>'hostname.com', 
-      'user'=>'remoteuser',
-      'publickeyfile'=> '/home/username/.ssh/id_rsa.pub',
-      'privatekeyfile'=> '/home/username/.ssh/id_rsa'
-    ));
+        $current_directory = '/home/remoteuser'; // this is your starting path. must be set before the connect() call
+        connect(array(
+          'host'=>'hostname.com', 
+          'user'=>'remoteuser',
+          'publickeyfile'=> '/home/username/.ssh/id_rsa.pub',
+          'privatekeyfile'=> '/home/username/.ssh/id_rsa'
+        ));
 ```
 3. you can now use the Valence DSL:
 ```php
-    echo run('ls');
-    cd('/home/remoteuser/src', function() {
-      echo run('ls');
-      run("echo 'joie'");
-    });
-    echo run('ls');
+        echo run('ls');
+        cd('/home/remoteuser/src', function() {
+          echo run('ls');
+          run("echo 'joie'");
+        });
+        echo run('ls');
 ```
 
 
