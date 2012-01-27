@@ -1,6 +1,6 @@
 <?php
 
-function connect($options) { // $host, $user, $port=22) {
+function connect($options) { 
   global $connection;
   $defaults = array(
     'host' => 'yourhost.com',
@@ -12,12 +12,9 @@ function connect($options) { // $host, $user, $port=22) {
   );
   $opts = array_merge($defaults, $options);
   $connection = ssh2_connect($opts['host'], $opts['port']);
-  // ssh2_auth_password($connection, $user, $pass);
-  if (ssh2_auth_pubkey_file($connection, $opts['user'],
+  if (!ssh2_auth_pubkey_file($connection, $opts['user'],
                             $opts['publickeyfile'],
                             $opts['privatekeyfile'])) {
-    // echo "Public Key Authentication Successful\n";
-  } else {
     die('Public Key Authentication Failed');
   }
 }
