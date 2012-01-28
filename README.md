@@ -37,5 +37,11 @@ Usage
         });
         echo run('ls');
 
+TODO
+----
+
+* write some tests
+* make it possible to do some useful stuff with the return value of commands (maybe return an object, with .failed and .return_code, like Fabric does).
+* implement `lcd` (local cd), `sudo` commands
 
 
